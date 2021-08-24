@@ -1,0 +1,7 @@
+.navbar-light {
+    background-color: white !important;
+}
+
+.container-nav {
+    border-bottom: 5px solid var(--pink);
+}

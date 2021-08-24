@@ -1,1 +1,46 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container container-nav p-2">
+      <a class="navbar-brand" href="#">AwesomeBlog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/posteos" routerLinkActive="active">Posteos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/albumes" routerLinkActive="active">Álbumes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/todos" routerLinkActive="active">Todos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <ng-container>
+             <li class="nav-item">
+              <a class="nav-link" routerLink="/ingresar" routerLinkActive="active">Ingresar</a>
+            </li>
+          </ng-container>
+          <ng-container>
+            <li class="nav-item">
+             <a class="nav-link" routerLink="/registrarme" routerLinkActive="active">Registrarme</a>
+           </li>
+         </ng-container>
+         <ng-template #loggedIn>
+           <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" >Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/perfil" routerLinkActive="active">Mi Perfil</a>
+          </li>
+         </ng-template>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
