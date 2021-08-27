@@ -1,0 +1,11 @@
+<h2 class="mt-5">Listado de álbumes</h2>
+<div class="row d-flex flex-direction-row justify-content-center">
+    <div class="card my-2 d-flex m-3" style="width: 18rem;" *ngFor="let album of albums">
+        <div class="card-body posts-list row d-flex flex-direction-column justify-content-between">
+            <p class="album-userid">Usuario  {{album.userId}}</p>
+            <p class="m-0">Título</p>
+            <h4 class="post-title mb-2">{{album.title}}</h4>
+            <p class="d-grid gap-1"><button class="btn btn-secondary post-actions p-1" [routerLink]="['/albumes', album.id]">Detalles</button></p>
+        </div>
+    </div> 
+</div>

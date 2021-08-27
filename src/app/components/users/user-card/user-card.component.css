@@ -1,0 +1,24 @@
+button {
+    border-color: var(--pink);
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    background-color: transparent;
+}
+
+.user-id {
+    border-bottom: 3px solid var(--pink);
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+.field-name {
+    color: var(--dark-pink);
+}
+
+.field {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+ul {
+    list-style: none;
+}

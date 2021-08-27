@@ -1,19 +1,16 @@
-.posts-list {
+.users-list {
     color: black;
-    display: flex;
-    flex-direction: column;
 }
 
-.post-userid {
+.user-userid {
     color: rgba(0, 0, 0, 0.5);
     font-weight: 600;
-    border-bottom: 3px solid var(--pink);
 }
 
-.post-title {
+.user-title {
+    font-size: medium;
     font-weight: 500;
     text-align: start;
-    width: auto;
 }
 
 button {
@@ -21,4 +18,16 @@ button {
     border: 2px solid var(--pink);
     color: var(--pink);
     background-color: transparent;
+}
+
+.col-name {
+    border-left: 3px solid var(--pink);
+}
+
+.card-body {
+    padding: 0px !important
+}
+
+h2 {
+    text-align: center;
 }

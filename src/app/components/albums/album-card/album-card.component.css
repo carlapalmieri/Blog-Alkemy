@@ -1,0 +1,13 @@
+button {
+    border-color: var(--pink);
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    background-color: transparent;
+    padding: 8px !important;
+}
+
+.album-userid {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    border-bottom: 3px solid var(--pink);
+}

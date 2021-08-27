@@ -1,0 +1,47 @@
+<div class="card my-2 d-flex m-3" style="width: 90%;">
+    <div class="card-body">
+        <div class="row ">
+            <div class="col user-id m-3 p-2">Usuario {{user.id}}</div>
+        </div>
+        <div class="row">
+            <div class="col-11 col-md-5 offset-1">
+                <div class="row my-3">
+                    <div class="col-auto field-name">Nombre:</div>
+                    <div class="col-auto field"><b>{{user.name}}</b></div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-auto field-name">Username:</div>
+                    <div class="col-auto field"><b>{{user.username}}</b></div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-auto field-name">Sitio web:</div>
+                    <div class="col-auto field"><b>{{user.website}}</b></div>
+                </div>
+            </div>
+            <div class="col-11 col-md-6">
+                <div class="col-auto field-name my-2">Datos de la empresa:</div>
+                <div class="col-auto field">
+                    <ul>
+                        <li class="my-3">
+                            <div class="col field-name">Nombre: 
+                                <span class="col field"><b>{{user.company.name}}</b></span>
+                            </div>
+                            
+                        </li>
+                        <li class="my-3">
+                            <div class="field-name">Lema: 
+                                <span class="field"><b>{{user.company.catchPhrase}}</b></span>
+                            </div>
+                            
+                        </li>
+                        <li class="my-3">
+                            <div class="field-name">Área: 
+                                <span class="field"><b>{{user.company.bs}}</b></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

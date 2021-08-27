@@ -60,7 +60,7 @@ export class PostDetailsComponent implements OnInit {
     this.postsService.getPostsByIdService(id).subscribe(
       res => {
       this.post = res
-      this.getUserById(res.id)
+      this.getUserById(res.userId)
       console.log(res)
       },
       err => console.log(err))

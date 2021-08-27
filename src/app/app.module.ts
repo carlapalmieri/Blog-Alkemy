@@ -9,8 +9,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
-import { UsersComponent } from './components/users/users.component';
-import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
 
 import { FormsModule } from '@angular/forms';
@@ -18,6 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
 import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
+import { UsersListComponent } from './components/users/users-list/users-list.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
+import { UserCardComponent } from './components/users/user-card/user-card.component';
+import { AlbumsListComponent } from './components/albums/albums-list/albums-list.component';
+import { AlbumDetailsComponent } from './components/albums/album-details/album-details.component';
+import { AlbumCardComponent } from './components/albums/album-card/album-card.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +31,15 @@ import { PostsListComponent } from './components/posts/posts-list/posts-list.com
     LoginComponent,
     SigninComponent,
     MyprofileComponent,
-    UsersComponent,
-    AlbumsComponent,
     TodosComponent,
     PostDetailsComponent,
-    PostsListComponent
+    PostsListComponent,
+    UsersListComponent,
+    UserDetailsComponent,
+    UserCardComponent,
+    AlbumsListComponent,
+    AlbumDetailsComponent,
+    AlbumCardComponent
   ],
   imports: [
     BrowserModule,

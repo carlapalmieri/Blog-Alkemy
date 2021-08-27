@@ -1,29 +1,31 @@
 <div class="row d-flex flex-direction-column justify-content-center">
-    <div class="card my-2 d-flex m-3" style="width: 80%;">
-        <div class="card-body">
+    <div class="card my-2 m-3" style="width: 80%;">
+        <div class="card-body ">
             <h3 class="post-title my-3 p-3">{{post.title}}</h3>
             <p>{{post.body}}</p> 
         </div>
     </div>
 </div>
-<div class="row d-flex justify-content-center">
-    <div class="col-10 col-md-4 p-0">
-        <div class="card my-2 d-flex m-3">
-            <div class="card-body">
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-10 p-0">
+        <div class="card my-2 d-flex align-items-center m-3">
+            <div class="card-body d-flex justify-content-center" *ngIf="!viewUserDetails; else userDetails">
                 <div class="col-auto my-2">
                     <span class="post-userid">Usuario {{post.userId}} </span>
                 </div>
-                <div class="col-auto" *ngIf="!viewUserDetails; else userDetails">
-                    <button class="btn btn-secondary p-1" (click)="seeUserDetails()">Detalles</button>
+                <div class="col-auto">
+                    <button class="btn btn-secondary p-1 ms-4" (click)="seeUserDetails()">Detalles</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-10 col-md-6 p-0">
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-10 p-0">
         <div class="card my-2 d-flex m-3">
-            <div class="card-body">
+            <div class="card-body row justify-content-center">
                 <div class="col-auto my-2">
-                    <span class="post-coments">Comentarios</span>
+                    <span class="post-coments">{{comments.length}} comentarios</span>
                 </div>
                 <div class="col-auto" *ngIf="!viewComments; else commentsDetails">
                     <button class="btn btn-secondary p-1" (click)="seeCommentsDetails()">Ver los comentarios</button>
@@ -33,45 +35,12 @@
     </div>
 </div>
 <ng-template #userDetails>
-    <div class="col d-flex flex-direction-row justify-content-center">
-        <div class="card my-2 d-flex m-3" style="width: 100%;">
-            <div class="card-body user-card">
-                <p class="mb-3">
-                    <span class="user-field">Nombre: </span>
-                    <span>{{user.name}}</span>
-                </p>
-                <p class="mb-3">
-                    <span class="user-field">Nombre de usuario: </span>
-                    <span>{{user.username}}</span>
-                </p>
-                <p class="mb-3">
-                    <span class="user-field">Sitio web: </span>
-                    <span>{{user.website}}</span>
-                </p>
-                <p class="mb-3">
-                    <span class="user-field">Datos de la empresa: </span>
-                </p>
-                <ul>
-                    <li>
-                        <span class="user-field">Nombre: </span>
-                        <span>{{user.company.name}}</span>
-                    </li>
-                    <li>
-                        <span class="user-field">Lema: </span>
-                        <span>{{user.company.catchPhrase}}</span>
-                    </li>
-                    <li>
-                        <span class="user-field">Área: </span>
-                        <span>{{user.company.bs}}</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="row d-flex flex-direction-column">
+        <app-user-card [user]="user"></app-user-card>
     </div>
     <div class="col d-flex justify-content-center">
-        <button class="btn btn-secondary p-1" (click)="hideUserDetails()">Ocultar</button>
+        <button class="btn btn-secondary mb-2" (click)="hideUserDetails()">Ocultar</button>
     </div>
-    
 </ng-template>
 <ng-template #commentsDetails>
     <div *ngFor="let comment of comments">

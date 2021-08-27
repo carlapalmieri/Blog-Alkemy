@@ -1,19 +1,7 @@
-.posts-list {
-    color: black;
-    display: flex;
-    flex-direction: column;
-}
-
-.post-userid {
+.album-userid {
     color: rgba(0, 0, 0, 0.5);
     font-weight: 600;
     border-bottom: 3px solid var(--pink);
-}
-
-.post-title {
-    font-weight: 500;
-    text-align: start;
-    width: auto;
 }
 
 button {
@@ -21,4 +9,9 @@ button {
     border: 2px solid var(--pink);
     color: var(--pink);
     background-color: transparent;
+    padding: 8px !important;
+}
+
+h2 {
+    text-align: center;
 }
