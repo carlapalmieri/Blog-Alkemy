@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto Slab', serif; }
+body { margin: 0; font-family: 'Catamaran', sans-serif; }
 
 :root {
     --pink: #f56a6a;
     --light-grey: #f5f6f7;
+    --dark-pink: #ca4242;
 }

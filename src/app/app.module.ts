@@ -10,14 +10,14 @@ import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { UsersComponent } from './components/users/users.component';
-import { PostsComponent } from './components/posts/posts.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
 
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
 
 @NgModule({
   declarations: [
@@ -28,18 +28,18 @@ import { HttpClientModule } from '@angular/common/http';
     SigninComponent,
     MyprofileComponent,
     UsersComponent,
-    PostsComponent,
     AlbumsComponent,
-    TodosComponent
+    TodosComponent,
+    PostDetailsComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

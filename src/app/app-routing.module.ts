@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { UsersComponent } from './components/users/users.component';
@@ -16,7 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'posteos',
-    component: PostsComponent
+    component: PostsListComponent
+  },
+  {
+    path: 'posteos/:id',
+    component: PostDetailsComponent
   },
   {
     path: 'albumes',
