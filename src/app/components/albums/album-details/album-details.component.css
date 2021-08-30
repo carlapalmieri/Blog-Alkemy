@@ -1,0 +1,68 @@
+button {
+    border-color: var(--pink);
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    background-color: transparent;
+    padding: 5px !important;
+}
+
+.album-userid {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    border-bottom: 3px solid var(--pink);
+}
+
+.gallery {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding: 0px !important;
+    background-color: black;
+    margin: 15px
+}
+
+.span-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.gallery-item:hover .span-img {
+    transition: 400ms;
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.gallery-item:hover img {
+    transition: 400ms;
+    filter: opacity(60%);
+}
+
+.modal-content {
+    width: fit-content !important;
+}
+
+.modal-img {
+    max-width: 80vw;
+}
+
+
+

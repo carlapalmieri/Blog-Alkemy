@@ -18,30 +18,6 @@ export class PostDetailsComponent implements OnInit {
     body: ''
   };
 
-  user: User = {
-    id: 0,
-    name: '',
-    username: '',
-    email: '',
-    address: {
-        street: '',
-        suite: '',
-        city: '',
-        zipcode: '',
-        geo: {
-            lat: '',
-            lng: ''
-        }
-    },
-    phone: '',
-    website: '',
-    company: {
-        name: '',
-        catchPhrase: '',
-        bs: ''
-    }
-  }
-
   comments: Comment[] = [];
 
   viewUserDetails: boolean = false
@@ -60,16 +36,6 @@ export class PostDetailsComponent implements OnInit {
     this.postsService.getPostsByIdService(id).subscribe(
       res => {
       this.post = res
-      this.getUserById(res.userId)
-      console.log(res)
-      },
-      err => console.log(err))
-  }
-
-  getUserById(id:number) {
-    this.postsService.getUserByIdService(id).subscribe(
-      res => {
-      this.user = res
       console.log(res)
       },
       err => console.log(err))

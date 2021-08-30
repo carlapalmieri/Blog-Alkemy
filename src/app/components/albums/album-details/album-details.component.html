@@ -1,1 +1,44 @@
-<app-album-card [album]="album"></app-album-card>
+<div class="row d-flex justify-content-center">
+    <div class="card my-2 d-flex m-3" style="width: 80%;">
+        <div class="card-body posts-list row d-flex flex-direction-column justify-content-between">
+            <p class="album-userid">Usuario {{album.userId}} <button class="btn p-0 my-2 ms-3" [routerLink]="['/usuarios', album.userId]">Detalles</button></p>
+            <p class="m-0">Título</p>
+            <h3 class="post-title mb-4">{{album.title}}</h3>
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-auto" *ngIf="!viewPhotos; else photosGallery">
+                    <button class="btn" (click)="seePhotos()">Ver Galería de fotos</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<ng-template #photosGallery>
+    <div class="row gallery d-flex align-items-center justify-content-center mx-auto">
+            <div class="col-12 col-md-6 text-md-end">
+                <h3>Galería de fotos</h3>
+            </div>
+            <div class="col-12 col-md-6 ">
+                <button class="btn mb-2" (click)="hidePhotos()">Ocultar</button>
+            </div>
+            <div class="gallery-item" *ngFor="let photo of photos">
+                <img [src]="photo.url" style="width: 200px;">
+                <span class="span-img" data-bs-toggle="modal" data-bs-target="#modalPhoto" (click)="selectImage(photo)">
+                    +
+                </span>
+            </div>
+    </div>
+    <div class="col-auto"><button class="btn my-2" (click)="hidePhotos()">Ocultar fotos</button></div>
+</ng-template>
+
+<div class="modal fade" id="modalPhoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex align-items-center">
+      <div class="modal-content">
+        <div class="modal-body">
+            <img [src]="photoSelected.url" class="modal-img">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

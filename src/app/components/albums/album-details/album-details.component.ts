@@ -17,12 +17,40 @@ export class AlbumDetailsComponent implements OnInit {
     userId: 0,
     title: '',
   }
+
+  photoSelected: Photo = {
+    id: 0,
+    albumId: 0,
+    title: '',
+    url: '',
+    thumbnailUrl: ''
+  }
+
+  viewPhotos: boolean = false
+
   constructor(private albumsService: AlbumsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
     this.getAlbumById(params.id)
-    this.getPhotosByAlbum(params.id)
+  }
+
+  getAlbumById(id:number) {
+    this.albumsService.getAlbumByIdService(id).subscribe(
+      res => {
+      this.album = res
+      console.log(res)
+      },
+      err => console.log(err))
+  }
+
+  seePhotos() {
+    this.viewPhotos = true;
+    this.getPhotosByAlbum(this.album.id)
+  }
+
+  hidePhotos() {
+    this.viewPhotos = false
   }
 
   getPhotosByAlbum(id:number) {
@@ -34,13 +62,9 @@ export class AlbumDetailsComponent implements OnInit {
       err => console.log(err))
   }
 
-  getAlbumById(id:number) {
-    this.albumsService.getAlbumByIdService(id).subscribe(
-      res => {
-      this.album = res
-      console.log(res)
-      },
-      err => console.log(err))
+  selectImage(photo: Photo) {
+    console.log(photo)
+    this.photoSelected = photo
   }
 
 }

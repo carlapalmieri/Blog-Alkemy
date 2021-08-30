@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/app/interfaces/user';
 import { Post } from 'src/app/interfaces/post';
+import { Todo } from 'src/app/interfaces/todos';
+import { Album } from 'src/app/interfaces/album';
 
 @Component({
   selector: 'app-user-details',
@@ -39,10 +41,16 @@ export class UserDetailsComponent implements OnInit {
 
   posts: Post[] = [];
 
+  todos: Todo[] = [];
+
+  albums: Album[] = [];
+
   constructor(private activatedRoute: ActivatedRoute, private usersService: UsersService) {
     const params = this.activatedRoute.snapshot.params;
-    this.getUserById(params.id)
-    this.getPostsByUser(params.id)
+    this.getUserById(params.id);
+    this.getPostsByUser(params.id);
+    this.getTodosByUser(params.id);
+    this.getAlbumsByUser(params.id);
   }
 
   ngOnInit(): void {
@@ -62,6 +70,24 @@ export class UserDetailsComponent implements OnInit {
     this.usersService.getPostsByUserService(id).subscribe(
       res => {
       this.posts = res
+      console.log(res)
+      },
+      err => console.log(err))
+  }
+
+  getTodosByUser(id:number) {
+    this.usersService.getTodosByUserService(id).subscribe(
+      res => {
+      this.todos = res
+      console.log(res)
+      },
+      err => console.log(err))
+  }
+
+  getAlbumsByUser(id:number) {
+    this.usersService.getAlbumsByUserService(id).subscribe(
+      res => {
+      this.albums = res
       console.log(res)
       },
       err => console.log(err))

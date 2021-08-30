@@ -3,10 +3,5 @@ button {
     border: 2px solid var(--pink);
     color: var(--pink);
     background-color: transparent;
-}
-
-.form-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding: 3px !important;
 }

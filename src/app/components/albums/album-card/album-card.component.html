@@ -1,14 +1,10 @@
-<div class="row d-flex justify-content-center">
-    <h3 class="mt-3 col-auto">
-        Álbum {{album.id}}
-    </h3>
-</div>
-<div class="row d-flex justify-content-center">
-    <div class="card my-2 d-flex m-3" style="width: 80%;">
-        <div class="card-body posts-list row d-flex flex-direction-column justify-content-between">
-            <p class="album-userid">Usuario  {{album.userId}}</p>
-            <p class="m-0">Título</p>
-            <h3 class="post-title mb-2">{{album.title}}</h3>
-        </div>
-    </div> 
+<div class="card-body albums-list">
+    <div>
+        <p class="album-userid">Usuario  {{album.userId}}</p>
+        <p class="m-0">Título</p>
+        <h4 class="post-title mb-2">{{album.title}}</h4>
+    </div>
+    <div>
+        <p class="d-grid gap-1"><button class="btn post-actions p-1" [routerLink]="['/albumes', album.id]">Detalles</button></p>
+    </div>
 </div>

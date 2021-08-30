@@ -9,7 +9,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
-import { TodosComponent } from './components/todos/todos.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +21,10 @@ import { UserCardComponent } from './components/users/user-card/user-card.compon
 import { AlbumsListComponent } from './components/albums/albums-list/albums-list.component';
 import { AlbumDetailsComponent } from './components/albums/album-details/album-details.component';
 import { AlbumCardComponent } from './components/albums/album-card/album-card.component';
+import { TodosListComponent } from './components/todos/todos-list/todos-list.component';
+import { TodoComponent } from './components/todos/todo/todo.component';
+import { PostCardComponent } from './components/posts/post-card/post-card.component';
+import { PostsFilterPipe } from './pipes/posts-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,6 @@ import { AlbumCardComponent } from './components/albums/album-card/album-card.co
     LoginComponent,
     SigninComponent,
     MyprofileComponent,
-    TodosComponent,
     PostDetailsComponent,
     PostsListComponent,
     UsersListComponent,
@@ -39,7 +41,11 @@ import { AlbumCardComponent } from './components/albums/album-card/album-card.co
     UserCardComponent,
     AlbumsListComponent,
     AlbumDetailsComponent,
-    AlbumCardComponent
+    AlbumCardComponent,
+    TodosListComponent,
+    TodoComponent,
+    PostCardComponent,
+    PostsFilterPipe
   ],
   imports: [
     BrowserModule,

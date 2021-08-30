@@ -1,3 +1,16 @@
+.album-userid {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    border-bottom: 3px solid var(--pink);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100% !important;
+}
+
 button {
     border-color: var(--pink);
     border: 2px solid var(--pink);
@@ -6,8 +19,6 @@ button {
     padding: 8px !important;
 }
 
-.album-userid {
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 600;
-    border-bottom: 3px solid var(--pink);
+h2 {
+    text-align: center;
 }

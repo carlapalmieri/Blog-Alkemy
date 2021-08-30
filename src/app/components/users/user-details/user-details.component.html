@@ -1,33 +1,50 @@
 <div class="row d-flex flex-direction-column justify-content-center align-items-center">
     <app-user-card [user]="user" class="d-flex flex-direction-column justify-content-center"></app-user-card>
 </div>
-<div class="row d-flex justify-content-center align-items-center">
-    <div class="col-10 p-0 mb-4">
-        <div class="card my-2 d-flex m-1">
-            <div class="card-body d-flex align-items-center justify-content-around" *ngIf="!viewPostsDetails; else postsDetails">
-                <div class="col-auto my-2">
-                    <span class="posts">{{posts.length}} Posteos</span>
+
+<div class="row d-flex justify-content-center mt-4">
+    <div class="col-12 col-sm-10">
+        <nav>
+            <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button" role="tab" aria-controls="posts" aria-selected="true">Posteos</button>
+              <button class="nav-link" id="albums-tab" data-bs-toggle="tab" data-bs-target="#albums" type="button" role="tab" aria-controls="albums" aria-selected="false">Álbumes</button>
+              <button class="nav-link" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos" type="button" role="tab" aria-controls="todos" aria-selected="false">Todos</button>
+            </div>
+        </nav>
+        <div class="tab-content my-4" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                <div class="row d-flex flex-direction-row justify-content-center">
+                    <div class="card my-2 d-flex m-3" style="width: 18rem;" *ngFor="let post of posts">
+                        <app-post-card [post]="post" style="height: 100%;"></app-post-card>
+                    </div> 
                 </div>
-                <div class="col-auto">
-                    <button class=" btn btn-secondary p-1" (click)="seePostsDetails()">Detalles</button>
+            </div>
+            <div class="tab-pane fade" id="albums" role="tabpanel" aria-labelledby="albums-tab">
+                <div class="row d-flex flex-direction-row justify-content-center">
+                    <div class="card my-2 d-flex m-3" style="width: 30rem;" *ngFor="let album of albums">
+                        <app-album-card style="height: 100%;" [album]="album" ></app-album-card>
+                    </div> 
                 </div>
+            </div>
+            <div class="tab-pane fade" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+                <div class="row ">
+                    <ul class="list-group">
+                        <div class="row d-flex flex-direction-row justify-content-center">
+                            <div class="col-6 my-1" *ngFor="let todo of todos">
+                                <app-todo [todo]="todo"></app-todo>
+                            </div>
+                        </div>
+                    </ul>
+                </div> 
             </div>
         </div>
     </div>
 </div>
+
+
+
 <ng-template #postsDetails>
-    <div class="row d-flex flex-direction-column justify-content-center">
-            <div class="card my-2 m-3" style="width: 90%;" *ngFor="let post of posts">
-                <div class="card-body ">
-                    <h4 class="post-title mb-3 p-2">{{post.title}}</h4>
-                    <p class="mb-1">{{post.body}}</p>
-                </div>
-            </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-auto my-2">
-            <button class="btn btn-secondary p-1" (click)="hidePostsDetails()">Ocultar posts</button>
-        </div>
-    </div>
     
 </ng-template>
+
+

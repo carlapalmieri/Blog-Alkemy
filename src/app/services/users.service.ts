@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post';
+import { Todo } from '../interfaces/todos';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -22,5 +23,13 @@ export class UsersService {
 
   getPostsByUserService(id: number) {
     return this.http.get<Post[]>(`${this.URL}users/${id}/posts`)
+  }
+
+  getTodosByUserService(id: number) {
+    return this.http.get<Todo[]>(`${this.URL}users/${id}/todos`)
+  }
+
+  getAlbumsByUserService(id: number) {
+    return this.http.get<Todo[]>(`${this.URL}users/${id}/albums`)
   }
 }

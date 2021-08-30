@@ -7,7 +7,7 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
 import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { TodosComponent } from './components/todos/todos.component';
+import { TodosListComponent } from './components/todos/todos-list/todos-list.component';
 import { UserDetailsComponent } from './components/users/user-details/user-details.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 
@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'todos',
-    component: TodosComponent
+    component: TodosListComponent
   },
   {
     path: 'usuarios',

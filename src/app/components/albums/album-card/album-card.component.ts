@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Album } from 'src/app/interfaces/album';
+import { Album, Photo } from 'src/app/interfaces/album';
+import { AlbumsService } from 'src/app/services/albums.service';
 
 @Component({
   selector: 'app-album-card',
@@ -7,12 +8,13 @@ import { Album } from 'src/app/interfaces/album';
   styleUrls: ['./album-card.component.css']
 })
 export class AlbumCardComponent implements OnInit {
-  @Input()
-  album!: Album;
+  @Input() album!: Album;
   
-  constructor() { }
+  
+  constructor(private albumsService: AlbumsService) { }
 
   ngOnInit(): void {
   }
+
 
 }

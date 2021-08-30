@@ -1,22 +1,16 @@
 <div class="row d-flex flex-direction-column justify-content-center">
     <div class="card my-2 m-3" style="width: 80%;">
-        <div class="card-body ">
-            <h3 class="post-title my-3 p-3">{{post.title}}</h3>
-            <p>{{post.body}}</p> 
-        </div>
-    </div>
-</div>
-<div class="row d-flex justify-content-center align-items-center">
-    <div class="col-12 col-md-10 p-0">
-        <div class="card my-2 d-flex align-items-center m-3">
-            <div class="card-body d-flex justify-content-center" *ngIf="!viewUserDetails; else userDetails">
-                <div class="col-auto my-2">
+        <div class="card-body">
+             <div class="row d-flex align-items-center">
+                <div class="col-auto ms-4">
                     <span class="post-userid">Usuario {{post.userId}} </span>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-secondary p-1 ms-4" (click)="seeUserDetails()">Detalles</button>
+                    <button class="btn p-0 ms-1" [routerLink]="['/usuarios', post.userId]">Detalles</button>
                 </div>
             </div>
+            <h3 class="post-title my-3 p-3">{{post.title}}</h3>
+            <p>{{post.body}}</p>
         </div>
     </div>
 </div>
@@ -28,20 +22,12 @@
                     <span class="post-coments">{{comments.length}} comentarios</span>
                 </div>
                 <div class="col-auto" *ngIf="!viewComments; else commentsDetails">
-                    <button class="btn btn-secondary p-1" (click)="seeCommentsDetails()">Ver los comentarios</button>
+                    <button class="btn p-1" (click)="seeCommentsDetails()">Ver los comentarios</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<ng-template #userDetails>
-    <div class="row d-flex flex-direction-column">
-        <app-user-card [user]="user"></app-user-card>
-    </div>
-    <div class="col d-flex justify-content-center">
-        <button class="btn btn-secondary mb-2" (click)="hideUserDetails()">Ocultar</button>
-    </div>
-</ng-template>
 <ng-template #commentsDetails>
     <div *ngFor="let comment of comments">
         <div class="card my-2 d-flex m-3">
@@ -53,7 +39,7 @@
         </div>
     </div>
     <div class="col d-flex justify-content-center">
-        <button class="btn btn-secondary p-1" (click)="hideCommentsDetails()">Ocultar</button>
+        <button class="btn p-1" (click)="hideCommentsDetails()">Ocultar</button>
     </div>
 </ng-template>
 

@@ -12,3 +12,11 @@ button {
     background-color: transparent;
     padding: 8px !important;
 }
+
+.nav-link {
+    font-size: large !important;
+}
+
+button .active {
+    background-color: var(--pink) !important;
+}

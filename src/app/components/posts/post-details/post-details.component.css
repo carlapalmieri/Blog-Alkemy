@@ -20,7 +20,7 @@ button {
     border: 2px solid var(--pink);
     color: var(--pink);
     background-color: transparent;
-    padding: 8px !important;
+    padding: 3px !important;
 }
 
 .comment-email {

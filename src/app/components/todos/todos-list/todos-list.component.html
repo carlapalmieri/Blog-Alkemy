@@ -1,0 +1,31 @@
+<div class="row d-flex justify-content-between">
+    <div class="col">
+        <h3 class="ms-2 mb-3">Lista de posteos</h3>
+    </div>
+    <div class="col d-flex justify-content-end align-items-center">
+        <form [formGroup]="filterTodos" (ngSubmit)="searchTodos(filterTodos.value.idUser)" class="d-flex justify-content-end align-items-center">
+            <span class="m-2">Filtrar:</span>
+            <div class="form-group">
+                <input class="m-2" formControlName="idUser" placeholder="Id del usuario" type="number">
+            </div>
+            <div>
+                <button [disabled]="filterTodos.invalid" class="btn btn-filters">
+                    Filtrar
+                </button>
+                <button *ngIf="filterActive === true" class="btn btn-filters ms-2" (click)="removeFilter()">
+                    Remover filtro
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row ">
+    <ul class="list-group">
+        <div class="row  d-flex flex-direction-row justify-content-center">
+            <div class="col-6 my-1" *ngFor="let todo of todos">
+                <app-todo [todo]="todo"></app-todo>
+            </div>
+        </div>
+    </ul>
+</div> 

@@ -1,37 +1,23 @@
-<div class="container p-3">
+
     <div class="row d-flex justify-content-between">
         <div class="col">
             <h3 class="ms-2 mb-3">Lista de posteos</h3>
         </div>
         <div class="col d-flex justify-content-end align-items-center">
-            <form [formGroup]="filtersPosts" (ngSubmit)="searchPosts(filtersPosts.value)" class="d-flex justify-content-end align-items-center">
+            <form [formGroup]="filtersPosts" class="d-flex justify-content-end align-items-center">
                 <span class="m-2">Filtrar:</span>
                 <div class="form-group">
-                    <input class="m-2" formControlName="idUser" placeholder="Id del usuario" type="number">
+                    <input class="m-2" (ngModelChange)="getPostsByUser(filtersPosts.value.idUser)" formControlName="idUser" placeholder="Id del usuario" type="number">
                 </div>
                 <div class="form-group">
                     <input class="m-2" formControlName="title" placeholder="Título" type="text">
-                </div>
-                <div>
-                    <button [disabled]="filtersPosts.invalid" class="btn btn-secondary btn-filters">
-                        Filtrar
-                    </button>
                 </div>
             </form>
         </div>
     </div>
     
-    <div class="row d-flex flex-direction-row">
-        <div class="card my-2 d-flex m-3" style="width: 18rem;" *ngFor="let post of posts">
-            <div class="card-body posts-list d-flex flex-direction-column justify-content-between">
-                <div>
-                    <p class="post-userid">Usuario {{post.userId}} </p>
-                    <p class="mt-3 mb-0">Título</p>
-                    <h4 class="post-title mb-3">{{post.title}}</h4>
-                </div>
-                
-                <p class="d-grid gap-1"><button class="btn btn-secondary post-actions p-1" [routerLink]="['/posteos', post.id]">Detalles</button></p>
-            </div>
+    <div class="row d-flex flex-direction-row justify-content-center">
+        <div class="card my-2 d-flex m-3" style="width: 18rem;" *ngFor="let post of posts  | postsFilter: filtersPosts.value.title">
+            <app-post-card [post]="post" style="height: 100%;"></app-post-card>
         </div> 
     </div>
-</div>

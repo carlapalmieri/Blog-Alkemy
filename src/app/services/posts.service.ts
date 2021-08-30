@@ -20,11 +20,11 @@ export class PostsService {
     return this.http.get<Post>(`${this.URL}posts/${id}`)
   }
 
-  getUserByIdService(id: number) {
-    return this.http.get<User>(`${this.URL}users/${id}`)
-  }
-
   getPostComentsService(id: number) {
     return this.http.get<Comment[]>(`${this.URL}posts/${id}/comments`)
+  }
+
+  getPostsByUserService(id: number) {
+    return this.http.get<Post[]>(`${this.URL}users/${id}/posts`)
   }
 }
