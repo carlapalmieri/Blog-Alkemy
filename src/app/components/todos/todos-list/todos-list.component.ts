@@ -30,29 +30,21 @@ export class TodosListComponent implements OnInit {
     this.todosService.getTodosService().subscribe(
     res => {
     this.todos = res
-    console.log(res)
     },
     err => console.log(err))
   }
 
   getTodosByUser(id: number) {
-    this.todosService.getTodosByUserService(id).subscribe(
+    console.log(id)
+    if(id !== 0 && id !== null) {
+      this.todosService.getTodosByUserService(id).subscribe(
       res => {
       this.todos = res
-      console.log(res)
       },
       err => console.log(err)
-    )
-  }
-
-  searchTodos(id: number) {
-    this.filterActive = true;
-    this.getTodosByUser(id)
-  }
-
-  removeFilter() {
-    this.filterActive = false;
-    this.getTodos();
-    this.filterTodos.setValue( {idUser: null})
+    )} else {
+      this.getTodos()
+    }
+    
   }
 }
