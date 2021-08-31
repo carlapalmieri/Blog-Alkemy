@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,7 @@ import { PostsFilterPipe } from './pipes/posts-filter.pipe';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    SigninComponent,
+    SignupComponent,
     MyprofileComponent,
     PostDetailsComponent,
     PostsListComponent,

@@ -6,10 +6,11 @@ import { LoginComponent } from './components/login/login.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
 import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { TodosListComponent } from './components/todos/todos-list/todos-list.component';
 import { UserDetailsComponent } from './components/users/user-details/user-details.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,43 +20,51 @@ const routes: Routes = [
   },
   {
     path: 'posteos',
-    component: PostsListComponent
+    component: PostsListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'posteos/:id',
-    component: PostDetailsComponent
+    component: PostDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'albumes',
-    component: AlbumsListComponent
+    component: AlbumsListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'albumes/:id',
-    component: AlbumDetailsComponent
+    component: AlbumDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'perfil',
-    component: MyprofileComponent
+    component: MyprofileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'todos',
-    component: TodosListComponent
+    component: TodosListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'usuarios',
-    component: UsersListComponent
+    component: UsersListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'usuarios/:id',
-    component: UserDetailsComponent
+    component: UserDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'ingresar',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'registrarme',
-    component: SigninComponent
+    component: SignupComponent,
   },
 ];
 

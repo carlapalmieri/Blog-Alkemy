@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>Formulario de registro</h3> 
+            </div>
+            <div class="card-body">
+                <form [formGroup]="registerForm" (ngSubmit)="signUp(registerForm.value)">
+                    <div class="form-group mt-2 mb-4">
+                        <input type="text" formControlName="email" name="email" class="form-control" placeholder="Email" required autofocus>
+                        <div *ngIf="registerForm.controls.email.status === 'INVALID' && registerForm.controls.email.touched === true" class="invalid-field">Ingresa un email válido</div>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <input type="user" formControlName="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
+                        <div *ngIf="registerForm.controls.username.status === 'INVALID' && registerForm.controls.username.touched === true" class="invalid-field">Ingresa un usuario válido (mínimo de 4 caracteres)</div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input type="name" formControlName="name" name="name" class="form-control" placeholder="Nombre completo" required>
+                        <div *ngIf="registerForm.controls.name.status === 'INVALID' && registerForm.controls.name.touched === true" class="invalid-field">Ingresa un nombre válido (mínimo de 4 caracteres)</div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input type="text" formControlName="website" name="website" class="form-control" placeholder="Sitio web" required>
+                        <div *ngIf="registerForm.controls.website.status === 'INVALID' && registerForm.controls.website.touched === true" class="invalid-field">Ingresa un URL válido</div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input type="text" formControlName="companyName" name="companyName" class="form-control" placeholder="Nombre de la compañía" required>
+                        <div *ngIf="registerForm.controls.companyName.status === 'INVALID' && registerForm.controls.companyName.touched === true" class="invalid-field">Ingresa un nombre válido (mínimo de 4 caracteres)</div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input type="text" formControlName="companyCatchPhrase" name="companyCatchPhrase" class="form-control" placeholder="Lema de la compañía" required>
+                        <div *ngIf="registerForm.controls.companyCatchPhrase.status === 'INVALID' && registerForm.controls.companyCatchPhrase.touched === true" class="invalid-field">Ingresa un lema válido (mínimo de 10 caracteres)</div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input type="text" formControlName="companyBs" name="companyBs" class="form-control" placeholder="Negocio simplificado" required>
+                        <div *ngIf="registerForm.controls.companyBs.status === 'INVALID' && registerForm.controls.companyBs.touched === true" class="invalid-field">Ingresa un lema válido (mínimo de 8 caracteres)</div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button [disabled]="registerForm.invalid" class="btn">
+                            SignUp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
