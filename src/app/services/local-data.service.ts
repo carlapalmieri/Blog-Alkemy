@@ -67,16 +67,17 @@ export class LocalDataService {
   }
 
   addTodo(todo: Todo) {
+    this.getTodos()
     if(localStorage.getItem('todos') === null) {
       this.todos.push(todo);
       localStorage.setItem('todos', JSON.stringify(this.todos));
-      console.log(this.todos)
+      this.router.navigate(['/perfil']);
     } else {
       if(!this.todoExists(todo)) {
         this.todos = JSON.parse(localStorage.getItem('todos')!)
         this.todos.push(todo);
         localStorage.setItem('todos', JSON.stringify(this.todos));
-        console.log(this.todos)
+        this.router.navigate(['/perfil']);
       } else {
         Swal.fire({
           icon: 'error',

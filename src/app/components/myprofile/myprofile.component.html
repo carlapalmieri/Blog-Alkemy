@@ -29,6 +29,9 @@
                 <div class="row ">
                     <ul class="list-group">
                         <div class="row d-flex flex-direction-row justify-content-center">
+                            <div class="col-12 d-flex justify-content-center">
+                                <button class="btn" routerLink="/form/todo">Crear un nuevo todo</button>
+                            </div>
                             <div class="col-6 my-1" *ngFor="let todo of todos">
                                 <app-todo [todo]="todo"></app-todo>
                             </div>
