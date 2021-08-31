@@ -4,3 +4,8 @@ button {
     color: var(--pink);
     background-color: transparent;
 }
+
+.invalid-field {
+    color: red;
+    font-size: small;
+}

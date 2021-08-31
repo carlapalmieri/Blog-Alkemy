@@ -25,6 +25,9 @@ import { TodosListComponent } from './components/todos/todos-list/todos-list.com
 import { TodoComponent } from './components/todos/todo/todo.component';
 import { PostCardComponent } from './components/posts/post-card/post-card.component';
 import { PostsFilterPipe } from './pipes/posts-filter.pipe';
+import { TodoFormComponent } from './components/forms/todo-form/todo-form.component';
+import { AlbumFormComponent } from './components/forms/album-form/album-form.component';
+import { PostFormComponent } from './components/forms/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { PostsFilterPipe } from './pipes/posts-filter.pipe';
     TodosListComponent,
     TodoComponent,
     PostCardComponent,
-    PostsFilterPipe
+    PostsFilterPipe,
+    TodoFormComponent,
+    AlbumFormComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AlbumDetailsComponent } from './components/albums/album-details/album-details.component';
 import { AlbumsListComponent } from './components/albums/albums-list/albums-list.component';
+import { AlbumFormComponent } from './components/forms/album-form/album-form.component';
+import { PostFormComponent } from './components/forms/post-form/post-form.component';
+import { TodoFormComponent } from './components/forms/todo-form/todo-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
@@ -65,6 +68,21 @@ const routes: Routes = [
   {
     path: 'registrarme',
     component: SignupComponent,
+  },
+  {
+    path: 'form/album',
+    component: AlbumFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'form/todo',
+    component: TodoFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'form/post',
+    component: PostFormComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

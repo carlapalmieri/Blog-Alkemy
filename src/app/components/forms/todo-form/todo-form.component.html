@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>Crear un todo</h3> 
+            </div>
+            <div class="card-body">
+                <form [formGroup]="todoForm" (ngSubmit)="saveTodo(todoForm.value)">
+                    <div class="form-group mt-2 mb-4">
+                        <input type="text" formControlName="title" name="title" class="form-control" placeholder="Ej: comprar frutas" required autofocus>
+                        <div *ngIf="todoForm.controls.title.status === 'INVALID' && todoForm.controls.title.touched === true" class="invalid-field">El todo debe tener entre 4 y 30 caracteres</div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button [disabled]="todoForm.invalid" class="btn">
+                            Guardar todo
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
